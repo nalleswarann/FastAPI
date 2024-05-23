@@ -1,2 +1,2 @@
 # FastAPI
-A python new framework
+A new python framework for the RestAPI
