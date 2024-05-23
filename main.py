@@ -50,7 +50,7 @@ def update_customer(cus_id: int, update_customer: BankCustomer):
         if customer.cus_id == cus_id:
             customers[index] = update_customer
             return customers
-    raise HTTPException(status_code=404, detail=f"Customer with id {cus_id} not found")
+    raise HTTPException(status_code=404, detail=f"Customer with id {cus_id} not found, so can't ablt to update")
 
 @app.delete('/customer/{cus_id}')
 def delete_customer(cus_id: int):
@@ -59,8 +59,4 @@ def delete_customer(cus_id: int):
     if customer.cus_id == cus_id:
       del customers[index]
       return customers
-  raise HTTPException(status_code=404, detail=f"Customer with id {cus_id} not found")
-
-
-if __name__ == "__main__":
-  uvicorn.run(app, host="127.0.0.1", port=8000)
+  raise HTTPException(status_code=404, detail=f"Customer with id {cus_id} not found, so can't able to delete")
