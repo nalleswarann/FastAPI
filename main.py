@@ -35,6 +35,10 @@ customers: List[BankCustomer] = []
 def show_customers():
     return customers
 
+# @app.get('/customers/{cus_id}')
+# def show_customer(cus_id : int):
+#    return {cus_id}
+
 @app.post('/customer')
 def create_customer(customer: BankCustomer):
     customers.append(customer)
